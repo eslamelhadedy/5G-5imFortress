@@ -1,0 +1,235 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+{% block scripts %}{% endblock %}
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>5imFortress</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <!--Stylesheet-->
+    <style media="screen">
+      *,
+
+*:before,
+*:after{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #5F6368;
+    background-image: url("https://github.com/frankuman/5imFortress/blob/main/HMI/frontend/gui/templates/img/hmitoprnotext.png?raw=true");
+}
+.background{
+    width: 430px;
+    height: 520px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+    opacity: 50%;
+}
+.background .shape{
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+}
+.shape:first-child{
+    background: linear-gradient(
+        rgb(240, 240, 240),
+        #656565
+    );
+    left: 110px;
+    top: -110px;
+}
+.shape:last-child{
+    background: linear-gradient(
+        to right,
+        #f1f1f1,
+        #7b7b7b
+    );
+    right: 110px;
+    bottom: -120px;
+}
+form{
+    height: 520px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+}
+form *{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    outline: none;
+    border: none;
+}
+form h3{
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+
+label{
+    display: block;
+    margin-top: 5px;
+    font-size: 16px;
+    font-weight: 500;
+}
+input{
+    display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+::placeholder{
+    color: #e5e5e5;
+}
+.formbutton{
+    margin-top: 50px;
+    width: 100%;
+    background-color: #ffffff;
+    color: #080710;
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.social{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.social a{
+    text-decoration: none;
+}
+.social div{
+  background: red;
+  width: 150px;
+  border-radius: 3px;
+  padding: 5px 10px 10px 5px;
+  background-color: rgba(255,255,255,0.27);
+  color: #eaf0fb;
+  text-align: center;
+}
+.social div:hover{
+  background-color: rgba(255,255,255,0.47);
+}
+.social .fb{
+  margin-left: 25px;
+}
+.social i{
+  margin-right: 4px;
+}
+.logo-login{
+    height: 140px;
+    width: 140px;
+    margin: 0 auto;
+    position: relative;
+    align-items: center;
+    align-content: center;
+    margin-left: 93px;
+    margin-top: -35px;
+    
+}
+.error-message{
+    font-family: 'Poppins',sans-serif;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 5px;
+    
+}
+.sidebar{
+    box-shadow: 7px 1px 20px 2px #000000;
+}
+    </style>
+
+
+
+<script>
+// Assuming you have the JSON data loaded from your file (users.json) or an API endpoint
+
+</script>
+{% endblock %}
+{% block body %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="sidebar">
+    <a href="/dashboard" class="img-link"><img src="https://github.com/frankuman/5imFortress/blob/main/HMI/frontend/gui/templates/img/logowhite.png?raw=true" alt="Logo" class="img-sidebar"></a>
+    <ul>
+        <!-- <li></li> -->
+        <li  class="menu "><a href="/dashboard"><i class="fa fa-fw fa-home"></i> Dashboard</a></li>
+        <li  class="menu active"> <a  href="/controllers" class="menu"><i class="fa fa-fw fa-wrench"></i> Controllers</a></li>
+        <li  class="menu "> <a  href="/loggers"> <i class="fa fa-fw fa-file-text"></i> Logs</a></li>
+        <li  class="menu "> <a href="/logout"> <i class="fa fa-sign-out"></i> Logout</a></li>
+    </ul>
+</div>
+<body>
+<div class="social">
+    <a href="https://github.com/frankuman/5imFortress"><div class="go"><i class="fab fa-github"> </i>  Github</div></a>
+
+</div>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <form>
+        <img src="https://github.com/frankuman/5imFortress/blob/main/HMI/frontend/gui/templates/img/logowhite.png?raw=true" alt="Logo" class="logo-login">
+        <!--
+        <label for="username">Username</label>
+        -->
+
+        <form form="post">
+            {{ form.csrf_token }}
+            {{ form.username.label }} {{ form.username(size=20) }}
+            {{ form.password.label }} {{ form.password(size=20) }}        
+            <!--
+            <label for="password">Password</label>
+            
+            <button type="submit">Log in</button>
+            -->
+            <input class="formbutton" type="submit" formmethod="post" formaction="/controllers" value="Login to HMI">
+            <div class="error-message">
+                {% if message %}
+                    {{ message }}
+                {% endif %}
+            </div>
+        </form>
+
+    </form>
+</body>
+{% endblock %}
+

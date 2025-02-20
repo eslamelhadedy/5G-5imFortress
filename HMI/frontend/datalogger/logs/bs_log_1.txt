@@ -1,0 +1,4 @@
+(02:47:48)-[USERS] Users SUCCESSFULLY fetched data
+
+(02:47:48)-[BITRATE] Bitrate FAILED at fetching data
+

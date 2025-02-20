@@ -1,0 +1,147 @@
+
+{% extends 'base.html' %}
+
+{% block head %}
+<script src="jquery.js"></script>
+{% block scripts %}{% endblock %}
+
+<script>
+    // Make sure to call the function after the external script (jquery.js) is loaded
+    $(document).ready(function() {
+        re_update_status_color();
+        re_update_users();
+    });
+    $(function () {
+        $("li:not(.menu)").click(function (e) {
+            e.preventDefault();
+            $("li:not(.menu)").removeClass("active");
+            $(this).addClass("active");
+        });
+    });
+      // start by retrieving the current state
+
+</script>
+<title class="Title">5imFortress</title>
+{% endblock %}
+
+{% block body %}
+<!-- The sidebar -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="sidebar">
+    <a href="/dashboard" class="img-link"><img src="https://github.com/frankuman/5imFortress/blob/main/HMI/frontend/gui/templates/img/logowhite.png?raw=true" alt="Logo" class="img-sidebar"></a>
+    <ul>
+        <li  class="menu active"><a href="/dashboard"><i class="fa fa-fw fa-home"></i> Dashboard</a></li>
+        <li  class="menu "> <a  href="/controllers" class="menu"><i class="fa fa-fw fa-wrench"></i> Controllers</a></li>
+        <li  class="menu "> <a  href="/loggers"> <i class="fa fa-fw fa-file-text"></i> Logs</a></li>
+        <li  class="menu "> <a href="/logout"> <i class="fa fa-sign-out"></i> Logout</a></li>
+    </ul>
+</div>
+
+<div class="indexcontent1">
+    <!-- Dashboard table containing basic information about each base station -->
+    <table class = "index1table">
+        <tr class = "index1tablerow">
+            <th class="index1tablehead">Tower name</th>
+            <th class="index1tablehead">Devices</th>
+            <th class="index1tablehead">Status</th>
+        </tr>
+        <!-- BS 1 -->
+        <tr class = "index1tablerow">
+            <td>
+                <a>Karlskrona</a>
+            </td>
+            <td>
+                <a id=bsusers1>0</a>
+            </td>
+            <td class="tablestatus1">
+                {{bspower[1]}}
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <!-- BS 2 -->
+        <tr class = "index1tablerow">
+            <td>
+                <a>Karlshamn</a>
+            </td>
+            <td>
+                <a id=bsusers2>0</a>
+            </td>
+            <td class="tablestatus2">
+                {{bspower[2]}}
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <!-- BS 3 -->
+        <tr class = "index1tablerow">
+            <td>
+                <a>Ronneby</a>
+            </td>
+            <td>
+                <a id=bsusers3>0</a>
+            </td>
+            <td class="tablestatus3">
+                {{bspower[3]}}
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <!-- BS 4 -->
+        <tr class = "index1tablerow">
+            <td>
+                <a>Sölvesborg</a>
+            </td>
+            <td>
+                <a id=bsusers4>0</a>
+            </td>
+            <td class="tablestatus4">
+                {{bspower[4]}}
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+        <!-- BS 5 -->
+        <tr class = "index1tablerow">
+            <td>
+                <a>Olofström</a>
+            </td>
+            <td>
+                <a id=bsusers5>0</a>
+            </td>
+            <td class="tablestatus5">
+                {{bspower[5]}}
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="indexcontent2">
+    <div class="box">
+        <div class="percent">
+        <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+        <div class="num">
+            <h2 id="profitproc">50<span>%</span></h2>
+        </div>
+
+
+        </div>
+        <h2 class="text">Profit</h2>
+    </div>
+    <h2 id="cost">Estimated Expense</h2><h2 id="costval">Unknown</h2>
+    <h2 id="profit">Estimated Income</h2><h2 id="profitval">Unknown</h2>
+</div>
+<div id="map"></div>
+
+{% endblock %}
